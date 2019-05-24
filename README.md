@@ -24,4 +24,15 @@ node v10.15.3 or above
 
 #### functionality
 
-This server provides a restful api with POST method and "/checkBirthday" url to check how many days from today to the next birthday. The input format is json passed in body and requires 4 properties: firstName, lastName, month, date. 
+This server provides a restful api with POST method and "/checkBirthday" url to check how many days from today to the next birthday. The input format is json passed in body.
+input format: 
+{
+  name: {
+    first: String,
+    last: String
+  },
+  birthday: {
+    month: Integer,
+    date: Integer
+  }
+}. 
