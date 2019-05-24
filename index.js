@@ -47,13 +47,13 @@ app.post('/checkBirthday', (request, response) => {
     response.send('Hello ' + request.body.name.first + '. Happy birthday!');
     return;
   }
-  if (month == 2 && date == 29) {
+  if (month == 2 && date == 29) {//for leap year, there are 29 days in Feb.
     if (!((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) || (month < today.getMonth() || month == today.getMonth() && date < today.getDate())) {
       while (!((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
         year++;
       }
     }
-  } else if (month < today.getMonth() || month == today.getMonth() && date < today.getDate()) {
+  } else if (month < today.getMonth() || month == today.getMonth() && date < today.getDate()) {//if the birthday is already pass in this year, increase year by 1.
     year++;
   }
   //console.log(year);
